@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLAZH</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .container {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #27272a, #000000, #27272a);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent, rgba(255, 255, 255, 0.05));
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+    }
+
+    .btn {
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 0.625rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-content {
+      position: relative;
+      width: 100%;
+      max-width: 80rem;
+      padding: 0 2rem;
+    }
+
+    .left-text {
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .right-text {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .side-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+    }
+
+    .center-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .logo-svg {
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-name {
+      font-size: 2.25rem;
+      font-weight: bold;
+      letter-spacing: 0.3em;
+    }
+
+    footer {
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      line-height: 1.625;
+    }
+
+    .menu-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .left-text,
+      .right-text {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 1.5rem;
+      }
+
+      header {
+        padding: 1rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.625rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="gradient-overlay"></div>
+    
+    <div class="content">
+      <header>
+        <button class="btn">START NOW</button>
+        <button class="btn">
+          MENU
+          <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </header>
+      
+      <main>
+        <div class="main-content">
+          <div class="left-text">
+            <p class="side-text">THE NEW INTELLIGENCE</p>
+          </div>     
+          <div>
+            <p style="text-align: center; font-size: 100px; font-weight: bold; font-family: Doto;">FLAZH</p>
+          </div>     
+          <div class="right-text">
+            <p class="side-text">THE NEXT FRONTIER</p>
+          </div>
+        </div>
+      </main>
+      
+      <footer>
+        <p class="footer-text">
+          WE ARE RE-ARCHITECTING THE<br>
+          BUSINESSES OF TODAY FOR A FASTER,<br>
+          SMARTER TOMORROW.
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Add any interactive functionality here
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function() {
+        console.log(this.textContent.trim() + ' clicked');
+      });
+    });
+  </script>
+</body>
+</html>
